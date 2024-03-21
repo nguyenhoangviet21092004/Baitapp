@@ -11,4 +11,7 @@ import java.util.List;
 public interface IProductRepo extends JpaRepository<Product,Integer> {
     @Query("select p from  Product  p where  p.price = ?1")
     List<Product> searchPrice(double price);
+
+    @Query("select p from Product p order by p.price asc ")
+    List<Product> index();
 }

@@ -71,6 +71,13 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
+    @GetMapping("/asc")
+    public ResponseEntity<List<Product>> ASC() {
+        List<Product> products = iProductRepo.index();
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+
 
 }
 
